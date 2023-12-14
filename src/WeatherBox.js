@@ -16,7 +16,7 @@ function WeatherBox({coords, is_today}) {
     let [data, setData] = useState(null)
 
     function get_data(is_today){
-        let url = null
+        let url
 
         if (is_today) url = today_url
         else url = days5_url
