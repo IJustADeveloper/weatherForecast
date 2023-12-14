@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 import { useState, useEffect } from 'react'
 import WeatherBox from "./WeatherBox";
-import {YMaps, Map, Placemark, useYMaps} from "@pbe/react-yandex-maps";
+import {YMaps, Map, Placemark} from "@pbe/react-yandex-maps";
 import CityPicker from "./CityPicker";
 
 
