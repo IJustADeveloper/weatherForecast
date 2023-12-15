@@ -7,7 +7,8 @@ import CityPicker from "./CityPicker";
 
 
 function App() {
-    let [coords, setCoords] = useState({lat: 59.9386, lon: 30.3141})
+    const [coords, setCoords] = useState({lat: 59.9386, lon: 30.3141})
+    const [width, setWidth] = React.useState(window.innerWidth);
 
     function getDevicePosition(){
         navigator.geolocation.getCurrentPosition((pos)=>{
@@ -19,6 +20,16 @@ function App() {
         let event_coords = event._sourceEvent.originalEvent.coords
         setCoords({lat: event_coords[0], lon: event_coords[1]})
     }
+
+    useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+
+        window.addEventListener("resize", handleResizeWindow);
+
+        return () => {
+            window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, []);
 
     useEffect(()=>{getDevicePosition()}, [])
 

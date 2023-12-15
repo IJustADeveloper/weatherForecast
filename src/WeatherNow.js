@@ -2,7 +2,7 @@ import React from 'react'
 
 function WHP_line ({wind, main}){
     const hpa_mult = 0.750064
-    if (window.innerWidth >= 410){
+    if (window.innerWidth >= 420){
         return(<div className={"flex-row"}>
             <i className={"wind icon"}></i>
             <p className={"icon-text"}>{wind.speed}м/с</p>
@@ -55,8 +55,6 @@ function WeatherNow({time, main, wind, weather, offset, sys}){
     }else {
         daytime = "night"
     }
-
-
 
     return(
         <div className={"weather-cell "+daytime}>
